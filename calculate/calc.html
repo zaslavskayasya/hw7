@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0/">
+    <title>calc</title>
+    <link rel="stylesheet" type="text/css"  href="style_calc.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+</head>
+<body>
+
+     <div class="container">
+         <div class="calc_body">
+             <div id="result"></div>
+             <div class="buttons">
+                 <button type="button" id="a1" value="1">1</button>
+                 <button type="button" id="a2" value="2">2</button>
+                 <button type="button" id="a3" value="3">3</button>
+                 <button type="button" id="a4" value="4">4</button>
+                 <button type="button" id="a5" value="5">5</button>
+                 <button type="button" id="a6" value="6">6</button>
+                 <button type="button" id="a7" value="7">7</button>
+                 <button type="button" id="a8" value="8">8</button>
+                 <button type="button" id="a9" value="9">9</button>
+                 <button type="button" id="a0" value="0">0</button>
+             </div>
+             <div class="operators">
+                 <button type="button" id="a_plus" value="+">+</button>
+                 <button type="button" id="a_min" value="-">-</button>
+                 <button type="button" id="a_div" value="/">/</button>
+                 <button type="button" id="a_mult" value="0">*</button>
+                 <button type="button" id="a_submit" value="">=</button>
+
+             </div>
+         </div>
+
+
+
+     </div>
+
+
+<script>
+
+    var n1 = document.querySelector("#a1");
+    var n2 = document.querySelector("#a2");
+    var n3 = document.querySelector("#a3");
+    var n4 = document.querySelector("#a4");
+    var n5 = document.querySelector("#a5");
+    var n6 = document.querySelector("#a6");
+    var n7 = document.querySelector("#a7");
+    var n8 = document.querySelector("#a8");
+    var n9 = document.querySelector("#a9");
+    var n0 = document.querySelector("#a0");
+    var plus = document.querySelector("#a_plus");
+    var min = document.querySelector("#a_min");
+    var mult = document.querySelector("#a_mult");
+    var divi = document.querySelector("#a_div");
+    var submit = document.querySelector("#a_submit");
+    var result_visible = document.querySelector("#result");
+    var click1;
+    var click2;
+    var click_plus;
+
+    function sum_ab (a, b) {
+        return a + b;
+    }
+    function mult_ab (a, b) {
+        return a * b;
+    }
+    function subt_ab (a, b) {
+        return a - b;
+    }
+    function div_ab (a, b) {
+        return a / b;
+    }
+
+    n1.onclick = function () {
+        click1 = +n1.value;
+        result_visible.innerHTML =  n1.value;
+        console.log(n1.value);
+    }
+
+    n2.onclick = function () {
+        click2 = +n2.value;
+        result_visible.innerHTML =  n2.value;
+        console.log(n2.value);
+    }
+
+    plus.onclick = function () {
+        click_plus = plus.value;
+        result_visible.innerHTML = plus.value;
+        console.log(plus.value);
+    }
+
+
+    submit.onclick = function() {
+            var x = sum_ab(click1, click2);
+            console.log(x);
+
+    }
+
+
+
+</script>
+
+</body>
+</html>

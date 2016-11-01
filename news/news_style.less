@@ -1,0 +1,118 @@
+@links_color : #3e98cb;
+@disp_b: block;
+
+.little_text {
+  color: #8f8f8f;
+  font-size: 10px;
+}
+
+.header {
+  height: 200px;
+  background-image: url("img/header.jpg");
+  background-position: right 0px;
+  position: relative;
+}
+.wrap {
+  margin: 0 auto;
+  width: 90%;
+}
+.main_content{
+  width: 66.5%;
+
+  display: inline-block;
+  position: absolute;
+  top: 75px;
+  margin: 10px;
+  background-color: #fff;
+  padding: 19px;
+}
+.aside {
+  width: 20%;
+
+  vertical-align: top;
+  float: right;
+
+  display: inline-block;
+  padding: 5px;
+}
+.news_name {
+  font-size : 24px;
+  margin: 7px 0px;
+  font-weight: 600;
+  font-family: Arial;
+}
+
+.date_time {
+  .little_text;
+}
+
+.news_text {
+  color: #363636;
+  font-size: 16px;
+}
+/* не нашла где бы уместно применить вложенность, этот вариант только для теста этой возможности*/
+ul {
+  padding-left: 0px;
+  p {
+    font-weight: 600;
+  }
+  li {
+    list-style: none;
+    padding: 5px 0px;
+  }
+}
+
+.p_header {
+  font-size: 24px;
+  color: #000;
+  font-weight: 100;
+}
+
+.text_pic {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.visible_link {
+  border-bottom: 2px #3e98cb dotted;
+  color: @links_color;
+  width: 300px;
+  cursor: pointer;
+  margin: 20px 0px;
+}
+
+.hidden_link {
+  display: none;
+}
+.link {
+  text-decoration: none;
+  color: @links_color; text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  height: 59px;
+  padding-left: 10px;
+}
+
+.img_wrap {
+  width: 10px;
+  overflow: hidden;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  img {
+    border-radius: 100%;
+    width: 100%;
+  }
+}
+.fa-facebook-official {
+  color: #3e98cb;
+}
+.fa-vk {
+  color:#587199;
+}
+.fa-twitter-square {
+  color: #1f2226;
+}
+.fa-google-plus-square {
+  color: #e53859;
+}

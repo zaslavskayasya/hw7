@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0/">
+    <title>word</title>
+    <link rel="stylesheet" type="text/css"  href="style_w.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+</head>
+
+<div class="container">
+    <div class="controls">
+        <textarea  id="text" placeholder="Введите текст" >
+
+        </textarea>
+     <div class="buttons">
+        <div class="wrap">
+            <p class="choose">Размер:</p>
+            <select id="select">
+                   <option value="10px">10px</option>
+                   <option value="14px" >14px</option>
+                   <option value="16px" >16px</option>
+                   <option value="20px" >20px</option>
+                   <option value="24px" >24px</option>
+                   <option value="28px">28px</option>
+                   <option value="32px" >32px</option>
+                   <option value="40px" >40px</option>
+                   <option value="100px">100px</option>
+             </select>
+        </div>
+         <div class="wrap">
+             <p class="choose">Наклон:</p>
+             <select id="select_style">
+                 <option value="italic">italic</option>
+                 <option value="normal">normal</option>
+
+             </select>
+         </div>
+         <div class="wrap">
+             <p class="choose">Жирность:</p>
+             <select id="select_weight">
+                 <option value="100">100</option>
+                 <option value="200">200</option>
+                 <option value="300">300</option>
+                 <option value="400">400</option>
+                 <option value="500">500</option>
+                 <option value="600">600</option>
+                 <option value="800">800</option>
+
+             </select>
+         </div>
+
+         <div class="wrap">
+             <p class="choose">Цвет:</p>
+             <select id="select_color">
+                 <option value="#ff0031">Red</option>
+                 <option value="#057918" >green_dark</option>
+                 <option value="#2806f6">blue</option>
+                 <option value="#e206f6">pink</option>
+             </select>
+         </div>
+         <div class="wrap">
+             <p class="choose">Расположение:</p>
+            <input type="radio" name="position" value="left" checked>left<br>
+            <input type="radio" name="position" value="center">Center<br>
+            <input type="radio" name="position" value="justify">justify<br>
+            <input type="radio" name="position" value="right">right
+         </div>
+
+         <div class="wrap">
+             <p class="choose"></p>
+             <button id="rez_button" class="button">ok</button>
+         </div>
+     </div>
+    </div>
+
+    <div id="result"></div>
+
+
+</div>
+
+<script>
+    var button = document.querySelector("#rez_button");
+    var block = document.querySelector("#result");
+    var text = document.querySelector("#text");
+    var select = document.querySelector("#select");
+    var select_color = document.querySelector("#select_color");
+    var select_style = document.querySelector("#select_style")
+    var select_weight = document.querySelector("#select_weight");
+    var inp = document.querySelector(".position");
+
+   /** решение для радиокнопок найдено на stackoverflow.com */
+   /* http://ru.stackoverflow.com/questions/110335/%D0%9A%D0%B0%D0%BA-%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D1%83-radiobutton-%D0%B2-javascript */
+    function check()
+    {
+        var inp = document.getElementsByName('position');  /* переменная инп = position */
+        for (var i = 0; i < inp.length; i++) {     /* Когда длинна инп больше 0, добавлять +1 с каждым циклом и запустить проверку условия*/
+            if (inp[i].type == "radio" && inp[i].checked) { /*если тип инпута радио, и оно выбран   */
+                block.style.textAlign = inp[i].value;  /*присвоить блоку значение value*/
+            }
+        }
+    }
+  /** Проверка на заполненность, но работает только если ничего нет, условие  < 10 не срабатывает*/
+    function val() {
+        if (text.value < 10 ) {
+            alert('вы не ввели текст!');
+        }
+    }
+
+
+    button.onclick = function () {
+        block.innerHTML =  text.value;
+        block.style.fontSize = select.value;
+        block.style.color = select_color.value;
+        block.style.fontStyle = select_style.value;
+        block.style.fontWeight = select_weight.value;
+        check();
+        val();
+
+
+    }
+
+
+
+
+</script>
+</html>

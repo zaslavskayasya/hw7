@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0/">
+    <title>news</title>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"><script src="https://use.fontawesome.com/b5e01fdc4f.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="news_style.css">
+</head>
+<body>
+   <header class="header">
+
+   </header>
+   <div class="wrap">
+   <section class="main_content">
+
+       <p class="news_name">
+           Несколько советов less-разработчику
+       </p>
+       <p class="date_time">
+           21 октября 2013 в 19:44 время чтения 10 минут
+       </p>
+       <p class="news_text">
+           Зачастую, создавая less-файлы (что, впрочем, касается и других препроцессоров css), мы гонимся за красотой и элегантностью less-кода, когда как частенько забываем про скомпилированный css-код. Иногда это влечет за собой критичные последствия, когда объем конечного css возрастает в раз, а код становится совершенно нечитаемым.
+       </p>
+       <ul>
+           <p class="news_text"> Disclaimer </p>
+       <li class="news_text">1) Эта статья подойдет как для SASS/SCSS-разработчиков, так и для CSS-писателей.
+       <li class="news_text">2) Приведенные примеры кода не идентичны, но в большинстве случаев взаимозаменяемы и написаны для иллюстрации советов.</li>
+       </ul>
+
+       <h2 class="p_header">1) Не делайте слишком длинных вложений</h2>
+       <p class="news_text">
+           Когда мы пишем обычный css-код, обычно не получается такой проблемы. Врядли мы напишем перед css-свойствами цепочку из 10 элементов. А вот с древовидной структурой less-кода, такое вполне вероятно. Упрощайте свои «лесенки» кода. Выделяйте отдельные блоки и выносите их. Особенно это касается универсальных классов и id. Длинные цепочки селекторов утяжеляют файл стилей, затрудняют его чтение, порой объем css-файл может увеличиваться из-за излишней вложенности в два раза.
+       </p>
+       <img class="text_pic" src="img/ex1.jpg">
+
+       <div class="visible_link" id="link_v">
+           Посмотреть скомпилированный css-код
+       </div>
+       <div class="hidden_link" id="link_h">
+           <img class="text_pic" src="img/ex2.jpg">
+
+       </div>
+       <h2 class="p_header"> 2) Опасайтесь селекторов через запятую</h2>
+       <p class="news_text">
+           Если мы поставим в начале вложения селекторов (из примера выше) два или более селекторов через запятую, то все-все правила продублируются столько раз, сколько мы поставили селекторов вначале. Говоря об оптимизации веса получившегося css-файла, можно судить о десятках килобайт. Особенно опасно использовать селекторы через запятую, когда они вложены уже в селекторы, которые так же оформлены через запятую. Один из тяжелых случаев представлен ниже
+       </p>
+
+       <a class="link"  target="_blank" href="https://habrahabr.ru/post/196190/"> Продолжение по ссылке >>
+
+       </a>
+
+
+
+
+   </section>
+   <aside class="aside">
+      <p class="little_text ">Источник : </p>
+       <div class="img_wrap">
+           <img src="img/h_logo.png" alt="habr_logo">
+       </div>
+       <a class="link"  target="_blank" href="https://habrahabr.ru/post/196190/"> Habrhabr
+
+   </a>
+       <p class="little_text ">Поделиться:</p>
+       <div class="icons_block">
+           <a href="https://habrahabr.ru/post/196190/"<i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a>
+          <a href="https://habrahabr.ru/post/196190/"> <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
+           <a href="https://habrahabr.ru/post/196190/"> <i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i></a>
+           <a href="https://habrahabr.ru/post/196190/"> <i class="fa fa-vk fa-3x" aria-hidden="true"></i></a>
+
+       </div>
+   </aside>
+   </div>
+      <script>
+          /* для того чтобы скрывать/показывать ссылки*/
+          var link_vis = document.querySelector("#link_v"); /*получаем по id ссылку и называем её link_vis и присваиваем это переменной*/
+          var link_hid = document.querySelector("#link_h");  /*тоже самое для блока, что будет скрыт . link_hid*/
+
+         link_vis.onclick = function () {    /* по клику запускаем функцию */
+             if (link_hid.style.display === 'none') {  /*  получаем свойство дисплэе и сравниваем. если оно 'none'*/
+                 link_hid.style.display = 'block'    /* то присваиваем ему значение  'block'  */
+
+             } else {
+                 link_hid.style.display = 'none'  /* в другом случае, присваиваем ему 'none' */
+             }
+          }
+
+
+
+
+      </script>
+</body>
+</html>
