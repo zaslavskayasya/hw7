@@ -15,23 +15,22 @@
          <div class="calc_body">
              <div id="result"></div>
              <div class="buttons">
-                 <button type="button" id="a1" value="1">1</button>
-                 <button type="button" id="a2" value="2">2</button>
-                 <button type="button" id="a3" value="3">3</button>
-                 <button type="button" id="a4" value="4">4</button>
-                 <button type="button" id="a5" value="5">5</button>
-                 <button type="button" id="a6" value="6">6</button>
-                 <button type="button" id="a7" value="7">7</button>
-                 <button type="button" id="a8" value="8">8</button>
-                 <button type="button" id="a9" value="9">9</button>
-                 <button type="button" id="a0" value="0">0</button>
-             </div>
+                 <input type="button" id="a1" value="1">
+                 <input type="button" id="a2" value="2">
+                 <input type="button" id="a3" value="3">
+                 <input type="button" id="a4" value="4">
+                 <input type="button" id="a5" value="5">
+                 <input type="button" id="a6" value="6">
+                 <input type="button" id="a7" value="7">
+                 <input type="button" id="a8" value="8">
+                 <input type="button" id="a9" value="9">
+                 <input type="button" id="a0" value="0">
              <div class="operators">
-                 <button type="button" id="a_plus" value="+">+</button>
-                 <button type="button" id="a_min" value="-">-</button>
-                 <button type="button" id="a_div" value="/">/</button>
-                 <button type="button" id="a_mult" value="0">*</button>
-                 <button type="button" id="a_submit" value="">=</button>
+                 <input type="button" id="a_plus" value="+">
+                 <input type="button" id="a_min" value="-">
+                 <input type="button" id="a_div" value="/">
+                 <input type="button" id="a_mult" value="0">
+                 <input type="button" id="a_submit" value="=">
 
              </div>
          </div>
@@ -42,7 +41,7 @@
 
 
 <script>
-
+/* у каждой цифры и знака своя переменная*/
     var n1 = document.querySelector("#a1");
     var n2 = document.querySelector("#a2");
     var n3 = document.querySelector("#a3");
@@ -63,6 +62,7 @@
     var click2;
     var click_plus;
 
+/* арифметические функции */
     function sum_ab (a, b) {
         return a + b;
     }
@@ -76,7 +76,35 @@
         return a / b;
     }
 
-    n1.onclick = function () {
+
+ /** Алгоритм
+  * 1. ввод первого числа
+  *     есть переменная , которой присваивается значение нажатой кнопки
+  *     эта переменная запоминается
+  *     результат нажатия отображается на "экране"
+  *
+  *
+  * 2. Вввод действия
+  *    в переменную маписывается значение операции
+  *    запомнить
+  *    вывести
+  *
+  * 3. Ввод второго числа
+  *   в переменную записать значение нажатой кнопки
+  *   запомнить
+  *   вывести
+  *
+  * 4. По клику на = обработчик запускает функцию
+  *    функция ориентируется на знак операции
+  *    взависимости от знака выбирает арифметическую функцию и выполняет
+  *     результат выводит на "экран" 
+  *
+  *
+  * */
+
+
+/** неребочий вариант */
+/*    n1.onclick = function () {
         click1 = +n1.value;
         result_visible.innerHTML =  n1.value;
         console.log(n1.value);
@@ -100,7 +128,7 @@
             console.log(x);
 
     }
-
+*/
 
 
 </script>
